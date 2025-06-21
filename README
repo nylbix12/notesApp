@@ -1,0 +1,124 @@
+# notesApp
+
+**Une application mobile React Native pour gérer des notes**  
+- Créée avec Expo, Redux Toolkit et Styled-Components  
+- En français et anglais, stocke les données en local (AsyncStorage)  
+- Palette de couleurs : #7EE4EC, #114B5F, #FFD4CA  
+- Typographie : Montserrat
+
+---
+
+##  Prérequis
+
+- Node.js (>= 16)  
+- npm (>= 8)  
+- Expo CLI (locale dans le projet)  
+- Application **Expo Go** installée sur mon téléphone (iOS)
+
+---
+
+## Installation
+
+1. Clone le dépôt :
+   ```bash
+   git clone https://github.com/nylbix12/notesApp.git
+   cd notesApp
+Installe les dépendances :
+
+bash
+Copier
+Modifier
+npm install --legacy-peer-deps
+▶️ Lancement
+Démarre Metro en mode tunnel (pour que Expo Go sur mobile se connecte) :
+
+bash
+Copier
+Modifier
+npm start -- --tunnel
+Ouvre l’app Expo Go sur ton téléphone
+
+Scanne le QR code affiché dans le terminal ou dans Expo DevTools
+
+Ton appli notesApp se charge en quelques secondes !
+
+🗂️ Structure du projet
+bash
+Copier
+Modifier
+notesApp/
+├── App.jsx           # Point d’entrée + navigation + Provider Redux
+├── index.js          # registerRootComponent(App)
+├── app.json          # Config Expo
+├── package.json      # Dépendances & scripts
+├── redux/
+│   ├── actions/
+│   │   └── noteActions.js
+│   ├── reducers/
+│   │   └── notesReducer.js
+│   └── store.js
+├── screens/
+│   ├── Dashboard.jsx
+│   ├── Note.jsx
+│   └── Formulaire.jsx
+├── assets/           # Images, icônes, etc.
+└── README.md         # Ce fichier
+🔧 Technologies
+Framework : React Native + Expo (managed workflow)
+
+State : Redux Toolkit (@reduxjs/toolkit, react-redux)
+
+Styling : Styled-Components
+
+Navigation : React Navigation (@react-navigation/native, @react-navigation/native-stack)
+
+Stockage : AsyncStorage (@react-native-async-storage/async-storage)
+
+UUID : react-native-get-random-values + uuid
+
+Typographie : Montserrat via @expo-google-fonts/montserrat
+
+🎨 Design
+Fond global : #7EE4EC
+
+En-têtes & boutons : #114B5F
+
+Cartes de note : #FFD4CA
+
+Police : Montserrat_400Regular et Montserrat_700Bold
+
+⚙️ Fonctionnalités
+Dashboard
+
+Affiche la liste des notes (titre, date, troncature du contenu)
+
+Indicateur coloré de priorité
+
+Bouton ADD pour créer une nouvelle note
+
+Note
+
+Affiche la note en entier (titre, date, contenu complet, barre de priorité)
+
+Boutons Modifier et Supprimer (avec confirmation)
+
+Formulaire
+
+Permet de créer ou modifier une note
+
+Champs : titre, contenu, niveau d’importance (picker)
+
+Gestion du clavier (KeyboardAvoidingView + dismiss)
+
+Persisting
+
+Les notes sont sauvegardées localement dans AsyncStorage
+
+Elles sont rechargées à chaque ouverture de l’app
+
+🛡️ Sécurité & éco-conception
+Voir le Dossier de Conception pour les détails sur les mesures de sécurité, éco-conception, architecture et temps passé.
+
+🙏 Contributeurs & Licence
+Développé par Nabila dans le cadre du projet École Multimédia.
+MIT License.
